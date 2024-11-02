@@ -1,0 +1,53 @@
+---
+title: "Kehan Su's Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+## SKILLS
+Programming: R, SAS, STATA, Python
+
+Publications:  Disability and Health Journal
+
+## INTERNSHIP EXPERIENCE
+EMR Technical Solutions | New York, US | Data Analyst Intern                                          2024.05 – Present                                                                                                                                                         
+-Rewrote a search application provider for the Center of Medicare Service website, and enhanced its functionality, and usability
+
+-Improved the CMS search engine using R, and built an efficient solution that enabled 20%
+
+-Utilized Linear Regression Model and Time Series Model in Stata to forecast America’s healthcare enrollment for the next decade, and incorporated shapefile data for analysis and visualization, and the Prophet model to handle seasonal variation
+
+
+
+
+DKU Global Health Research Center | Suzhou, CN | CLHLS Lab Coordinator  2022/05 – 2023/06
+
+-Facilitated biweekly standup meetings across 5 teams to synchronize work progress, ensuring a cohesive and collaborative team
+
+-Organized conferences and prepared meeting memos for speakers to provide smooth and pleasant experiences
+
+-Managed the usage authority of the data access; Assisted in building the remote access system to a Lab Server using Linux system
+
+## RESEARCH PROJECTS
+
+Cost-Effectiveness Analysis of Influenza Vaccine Policy among Chinese Senior Citizens			    2022/06 – 2023/05
+
+-Retrieved and cleaned 70k+ entries of real-world evidence data to conduct logistic regression and analyzed vaccine effectiveness
+
+-Designed a static decision tree model to simulate three vaccination policy interventions and compare the cost-effectiveness of different policy interventions by calculating the incremental costs per quality-adjusted life year
+
+-Conducted Monte Carlo simulation to perform probabilistic sensitivity analysis; Conduct Tobit and two-part regression of influenza-related direct medical cost of 2000+ influenza episodes
+
+-Assisted in organizing online influenza medical discussion forum, with 20+ health majored experts and scholars as participants
+
+
+
+Stroke and Activity Limitation in Chinese Elderly Adults 65 Years or Older  2022/05 – 2023/02
+
+-Retrieved 130k survey data from the Chinese Longitudinal Healthy Longevity Survey (CLHLS) and performed multinomial logistic regression on activity limitations for the senior Chinese population
+
+-Creatively used the marginal standardization approach to compute prevalence ratio from the regression results via STATA
+
+-Published the research result on Disability and Health Journal
