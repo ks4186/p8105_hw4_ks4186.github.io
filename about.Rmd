@@ -1,0 +1,16 @@
+---
+title: "About the Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+This is Kehan Su's personal website.
+
+In this website, you can find:
+
+- My resume
+
+- My Github account, my email, and my video channel
