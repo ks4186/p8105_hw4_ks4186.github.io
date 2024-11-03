@@ -1,0 +1,95 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+```
+
+```{r}
+data("ny_noaa")
+airport_df=
+  ny_noaa |>
+    filter(id %in% c("USW00094789", "USW00014732"),
+    date >= as.Date("2008-01-01") & date <= as.Date("2008-12-31")) |>
+  mutate(
+    name = case_match(
+      id,
+      "USW00094789" ~ "JFK",
+      "USW00014732" ~ "LGA"),
+    tmin = as.numeric(tmin) / 10,
+    tmax = as.numeric(tmax) / 10,
+    prcp = as.numeric(prcp) / 10)
+  
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+airport_df |>
+  plot_ly(
+    x = ~tmin, 
+    y = ~tmax,
+    type = "scatter", 
+    mode = "markers", 
+    color = ~name,
+    alpha = 0.5
+  ) |>
+  layout(
+    title = "Temperature Comparison at JFK and LGA in 2008",
+    xaxis = list(title = "Minimum Temperature (°C)"),
+    yaxis = list(title = "Maximum Temperature (°C)")
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+airport_df |>
+plot_ly(
+  x = ~name,
+  y = ~prcp,
+  type = 'box',
+  color = ~name,
+  boxpoints = 'all', 
+  jitter = 0.5,     
+  pointpos = -1.8)|>
+  layout(
+    title = "Boxplot of Precipitation by Location",
+    xaxis = list(title = "Location"),
+    yaxis = list(title = "Precipitation (mm)")
+  )
+```
+
+### Chart C
+
+```{r}
+airport_df |>
+plot_ly(
+  x = ~tmax, 
+  color = ~name, 
+  type = 'histogram',
+  opacity = 0.7)|>
+  layout(
+    barmode = "overlay",
+    title = "Distribution of Maximum Temperatures",
+    xaxis = list(title = "Maximum Temperature (°C)"),
+    yaxis = list(title = "Frequency"),
+    legend = list(title = list(text = "Location"))
+  )
+```
+
